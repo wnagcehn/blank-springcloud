@@ -16,19 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
  *         updateAt 2019/4/27
  */
 
-// 配置自动更新
-@RefreshScope
-@Slf4j
+
 @RestController
 public class UserController {
 
-    @Value("${username:null}")
-    private String username;
-
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    public String getUsername(){
-        log.info("username:"+username);
-        return "Hello," + username;
+    public String echo(String username) {
+        return "Hello Nacos Provider:" + username;
     }
 }
  

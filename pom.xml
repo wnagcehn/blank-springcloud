@@ -11,6 +11,8 @@
     <modules>
         <module>blank-springcloud-consumer</module>
         <module>blank-springcloud-producer</module>
+        <module>blank-config</module>
+        <module>blank-sentinel</module>
     </modules>
 
     <properties>

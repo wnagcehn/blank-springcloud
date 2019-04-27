@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /user
+
+# Spring Cloud 中，dataId 的完整格式：${prefix}-${spring.profile.active}.${file-extension}
+# 1.prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置
+# 2.spring.profile.active 即为当前环境对应的 profile，当 spring.profile.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变成 ${prefix}.${file-extension}
+# 3.file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置。目前只支持 properties 和 yaml 类型
+spring:
+  application:
+    name: config
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: properties
+  profiles:
+    active: dev
+
+# Endpoint 来暴露相关信息
+# 访问 http://127.0.0.1:18084/actuator/nacos-config 来查看 Nacos Endpoint 的信息。
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *

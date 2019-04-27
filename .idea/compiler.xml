@@ -6,12 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="blank-config" />
+        <module name="blank-sentinel" />
         <module name="blank-springcloud" />
         <module name="blank-springcloud-consumer" />
         <module name="blank-springcloud-producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="blank-config" target="1.5" />
+      <module name="blank-sentinel" target="1.5" />
       <module name="blank-springcloud" target="1.5" />
       <module name="blank-springcloud-consumer" target="1.5" />
       <module name="blank-springcloud-producer" target="1.5" />

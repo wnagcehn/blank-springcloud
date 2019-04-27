@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/blank-springcloud-producer/pom.xml" />
         <option value="$PROJECT_DIR$/blank-springcloud-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-config/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-sentinel/pom.xml" />
       </list>
     </option>
   </component>
