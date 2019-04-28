@@ -1,18 +1,26 @@
 server:
   port: 18083
+  servlet:
+    context-path: /sen
 
 spring:
   application:
     name: sentinel-example
-
-spring:
   cloud:
-    sentinel:
-      transport:
-        dashboard:  127.0.0.1:8080
+      sentinel:
+        transport:
+          dashboard: 127.0.0.1:8080
+        datasource:
+          ds1:
+            file:
+              file:
+                classpath: flowrule.json
+              data-type: json
 
+# 监控管理,Endpoint 来暴露相关信息
+# 访问 http://127.0.0.1:18083/sen/actuator/ 来查看 sentinel Endpoint 的信息。
 management:
   endpoints:
     web:
       exposure:
-        include: *
+        include: "*"
