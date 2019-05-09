@@ -32,6 +32,13 @@
 			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
 		</dependency>
 
+		<!-- Nacos存储扩展 -->
+		<dependency>
+			<groupId>com.alibaba.csp</groupId>
+			<artifactId>sentinel-datasource-nacos</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

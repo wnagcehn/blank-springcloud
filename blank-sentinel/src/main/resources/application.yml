@@ -1,21 +1,24 @@
 server:
-  port: 18083
+  port: 8003
   servlet:
     context-path: /sen
 
 spring:
   application:
-    name: sentinel-example
+    name: alibaba-sentinel-datasource-nacos
   cloud:
       sentinel:
         transport:
           dashboard: 127.0.0.1:8080
         datasource:
-          ds1:
-            file:
-              file:
-                classpath: flowrule.json
-              data-type: json
+          ds:
+            # nacos的访问地址，，根据上面准备工作中启动的实例配置
+            # nacos中存储规则的groupId
+            # nacos中存储规则的dataId
+            nacos:
+              server-addr: 127.0.0.1:8848
+              dataId: ${spring.application.name}-sentinel
+              groupId: DEFAULT_GROUP
 
 # 监控管理,Endpoint 来暴露相关信息
 # 访问 http://127.0.0.1:18083/sen/actuator/ 来查看 sentinel Endpoint 的信息。
