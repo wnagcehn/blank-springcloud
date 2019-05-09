@@ -19,6 +19,7 @@ spring:
               server-addr: 127.0.0.1:8848
               dataId: ${spring.application.name}-sentinel
               groupId: DEFAULT_GROUP
+              rule-type: flow
 
 # 监控管理,Endpoint 来暴露相关信息
 # 访问 http://127.0.0.1:18083/sen/actuator/ 来查看 sentinel Endpoint 的信息。
