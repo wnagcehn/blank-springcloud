@@ -13,15 +13,19 @@
         <module>blank-nacos-discover</module>
         <module>blank-config</module>
         <module>blank-sentinel</module>
+        <module>blank-feign</module>
+        <module>blank-feign</module>
     </modules>
 
+    <!-- 2.1.X+Greenwich+0.9.X -->
+    <!-- 2.0.X+Finchley+0.2.X -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
+        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-        <spring-cloud-alibaba.version>0.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>0.2.1.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.18.2</lombok.version>
     </properties>
 

@@ -8,7 +8,14 @@
         <option value="$PROJECT_DIR$/blank-springcloud-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/blank-config/pom.xml" />
         <option value="$PROJECT_DIR$/blank-sentinel/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-feign/blank-feign-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-feign/blank-feign-consumer/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/blank-feign/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
