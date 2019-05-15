@@ -7,7 +7,22 @@ spring:
   application:
     name: feign-consumer
   cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      datasource:
+        ds:
+          # nacos的访问地址，，根据上面准备工作中启动的实例配置
+          # nacos中存储规则的groupId
+          # nacos中存储规则的dataId
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            rule-type: flow
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-
+feign:
+  sentinel:
+    enabled: true

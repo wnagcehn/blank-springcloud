@@ -28,6 +28,7 @@ public class SentinelController {
         return  map;
     }
 
+    //降级
     public static Map<String,Object> handleException(BlockException ex) {
         Map<String,Object> map=new HashMap<String,Object>();
         System.out.println("Oops: " + ex.getClass().getCanonicalName());
