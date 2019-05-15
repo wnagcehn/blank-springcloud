@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: blank-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: activity-route
+        # lb代表注册中心的服务名称，ws代表webservice
+        uri: lb://feign-consumer
+        predicates:
+        - Path=/feign/**
+        #方法谓词，此方式只会生效GET(第一个)
+        #- Method=GET,POST,PUT,DELETE
+        #重写Path，因为我们只需要把/feign/之后的地址转发给fegin-consumer服务处理，所以我们需要把原始的/feign/替换成/
+        #filters:
+        #- RewritePath=/feign/, /
+        #设置StripPrefix=1表示从二级url路径转发，即http://localhost:port/feign/test将会转发到http://{fegin-consumer}/test
+        #- StripPrefix=1

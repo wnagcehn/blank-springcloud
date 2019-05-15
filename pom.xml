@@ -14,7 +14,8 @@
         <module>blank-config</module>
         <module>blank-sentinel</module>
         <module>blank-feign</module>
-        <module>blank-feign</module>
+        <module>blank-common</module>
+        <module>blank-gateway</module>
     </modules>
 
     <!-- 2.1.X+Greenwich+0.9.X -->
