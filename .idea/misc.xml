@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/blank-sentinel/pom.xml" />
         <option value="$PROJECT_DIR$/blank-feign/blank-feign-provider/pom.xml" />
         <option value="$PROJECT_DIR$/blank-feign/blank-feign-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/blank-common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

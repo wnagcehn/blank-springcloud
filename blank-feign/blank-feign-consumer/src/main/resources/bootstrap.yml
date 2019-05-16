@@ -16,6 +16,7 @@ spring:
           # nacos的访问地址，，根据上面准备工作中启动的实例配置
           # nacos中存储规则的groupId
           # nacos中存储规则的dataId
+          # rule-type用来定义存储的规则类型,flow:限流
           nacos:
             server-addr: 127.0.0.1:8848
             dataId: ${spring.application.name}
@@ -24,6 +25,12 @@ spring:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
-        file-extension: properties
+        file-extension: yaml
       discovery:
         server-addr: 127.0.0.1:8848
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: *
