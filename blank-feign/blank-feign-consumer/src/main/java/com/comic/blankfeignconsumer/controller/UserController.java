@@ -13,8 +13,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @RefreshScope
-    @SentinelResource(value = "getUser")
+    //@SentinelResource(value = "getUser")
     @GetMapping("/getUser")
     private String getUser(){
         return userService.getUsername("wangchen");
