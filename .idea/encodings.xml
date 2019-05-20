@@ -12,7 +12,9 @@
     <file url="file://$PROJECT_DIR$/blank-nacos-discover" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blank-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blank-sentinel" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blank-zk" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
