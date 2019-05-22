@@ -9,10 +9,12 @@
       <module fileurl="file://$PROJECT_DIR$/blank-feign/blank-feign-provider/blank-feign-provider.iml" filepath="$PROJECT_DIR$/blank-feign/blank-feign-provider/blank-feign-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-gateway/blank-gateway.iml" filepath="$PROJECT_DIR$/blank-gateway/blank-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-nacos-discover/blank-nacos-discover.iml" filepath="$PROJECT_DIR$/blank-nacos-discover/blank-nacos-discover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blank-redis/blank-redis.iml" filepath="$PROJECT_DIR$/blank-redis/blank-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-sentinel/blank-sentinel.iml" filepath="$PROJECT_DIR$/blank-sentinel/blank-sentinel.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-springcloud.iml" filepath="$PROJECT_DIR$/blank-springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-consumer/blank-springcloud-consumer.iml" filepath="$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-consumer/blank-springcloud-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-producer/blank-springcloud-producer.iml" filepath="$PROJECT_DIR$/blank-nacos-discover/blank-springcloud-producer/blank-springcloud-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blank-zk/blank-zk.iml" filepath="$PROJECT_DIR$/blank-zk/blank-zk.iml" />
     </modules>
   </component>
 </project>

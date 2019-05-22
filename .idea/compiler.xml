@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="blank-common" />
+        <module name="blank-config" />
+        <module name="blank-feign-consumer" />
+        <module name="blank-feign-provider" />
+        <module name="blank-gateway" />
+        <module name="blank-redis" />
+        <module name="blank-sentinel" />
+        <module name="blank-springcloud-consumer" />
+        <module name="blank-springcloud-producer" />
+        <module name="blank-zk" />
+        <module name="blanknacosdiscover" />
+        <module name="feign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="blank-common" target="1.8" />
+      <module name="blank-config" target="1.8" />
+      <module name="blank-feign" target="1.8" />
+      <module name="blank-feign-consumer" target="1.8" />
+      <module name="blank-feign-provider" target="1.8" />
+      <module name="blank-gateway" target="1.8" />
+      <module name="blank-nacos-discover" target="1.8" />
+      <module name="blank-redis" target="1.8" />
+      <module name="blank-sentinel" target="1.8" />
+      <module name="blank-springcloud" target="1.8" />
+      <module name="blank-springcloud-consumer" target="1.8" />
+      <module name="blank-springcloud-producer" target="1.8" />
+      <module name="blank-zk" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
