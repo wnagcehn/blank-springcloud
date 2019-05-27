@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/blank.iml" filepath="$PROJECT_DIR$/blank.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-common/blank-common.iml" filepath="$PROJECT_DIR$/blank-common/blank-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-config/blank-config.iml" filepath="$PROJECT_DIR$/blank-config/blank-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/blank-feign/blank-feign.iml" filepath="$PROJECT_DIR$/blank-feign/blank-feign.iml" />

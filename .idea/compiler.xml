@@ -21,6 +21,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="blank" target="1.8" />
       <module name="blank-common" target="1.8" />
       <module name="blank-config" target="1.8" />
       <module name="blank-feign" target="1.8" />
@@ -30,7 +31,6 @@
       <module name="blank-nacos-discover" target="1.8" />
       <module name="blank-redis" target="1.8" />
       <module name="blank-sentinel" target="1.8" />
-      <module name="blank-springcloud" target="1.8" />
       <module name="blank-springcloud-consumer" target="1.8" />
       <module name="blank-springcloud-producer" target="1.8" />
       <module name="blank-zk" target="1.8" />
