@@ -66,6 +66,11 @@ public class DistributedLock {
      * 释放锁
      */
     public void releaseLock(){
+        //校验当前锁的持有人与但概念请求是否相同
+//        if (jedis.get(lockKey).equals(requestId)) {
+//            // 执行在这里时，如果锁被其它请求重新获取到了，此时就不该删除了
+//            jedis.del(lockKey);
+//        }
         try {
             if(interProcessMutex != null && interProcessMutex.isAcquiredInThisProcess()){
                 interProcessMutex.release();

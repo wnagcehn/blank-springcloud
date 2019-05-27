@@ -13,4 +13,9 @@ public class BlankZkApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void test(){
+
+	}
+
 }
