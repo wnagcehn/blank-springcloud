@@ -1,8 +1,6 @@
 package com.comic.blankredis.util;
 
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.Transaction;
+import redis.clients.jedis.*;
 import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.Collections;
@@ -18,6 +16,28 @@ public class RedisLockUtil {
     private static final String SET_IF_NOT_EXIST = "NX";
     private static final String SET_WITH_EXPIRE_TIME = "PX";
     private static final Long RELEASE_SUCCESS = 1L;
+    private static JedisPool pool = null;
+    private static final String auth = "12345";
+
+    /**
+     * 初始化Redis连接池
+     */
+    static {
+        //这里是连接的本地地址和端口
+        JedisShardInfo shardInfo = new JedisShardInfo("redis://localhost:6379");
+        //这里是密码
+        shardInfo.setPassword("12345");
+        JedisPoolConfig config = new JedisPoolConfig();
+        // 设置最大连接数
+        config.setMaxTotal(200);
+        // 设置最大空闲数
+        config.setMaxIdle(8);
+        // 设置最大等待时间
+        config.setMaxWaitMillis(1000 * 100);
+        // 在borrow一个jedis实例时，是否需要验证，若为true，则所有jedis实例均是可用的
+        config.setTestOnBorrow(true);
+        pool = new JedisPool(config, "127.0.0.1", 6379, 3000, auth);
+    }
 
     /**
      * 尝试获取分布式锁
