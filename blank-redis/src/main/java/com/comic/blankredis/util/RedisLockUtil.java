@@ -1,11 +1,11 @@
 package com.comic.blankredis.util;
 
-import redis.clients.jedis.*;
-import redis.clients.jedis.exceptions.JedisException;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.JedisShardInfo;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * redis分布式锁的简单实现代码
@@ -20,13 +20,9 @@ public class RedisLockUtil {
     private static final String auth = "12345";
 
     /**
-     * 初始化Redis连接池
+     * 初始化Redis连接池(可在yml配置中配置，是否可以放在nacos配置中心？)
      */
     static {
-        //这里是连接的本地地址和端口
-        JedisShardInfo shardInfo = new JedisShardInfo("redis://localhost:6379");
-        //这里是密码
-        shardInfo.setPassword("12345");
         JedisPoolConfig config = new JedisPoolConfig();
         // 设置最大连接数
         config.setMaxTotal(200);

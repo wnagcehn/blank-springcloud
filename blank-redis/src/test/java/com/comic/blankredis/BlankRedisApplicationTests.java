@@ -41,8 +41,10 @@ public class BlankRedisApplicationTests {
 		CountDownLatch looker = new CountDownLatch(1);
 		CountDownLatch latch = new CountDownLatch(10);
 		final String key = "lockKey";
-		JedisShardInfo shardInfo = new JedisShardInfo("redis://localhost:6379");//这里是连接的本地地址和端口
-		shardInfo.setPassword("12345");//这里是密码
+		//这里是连接的本地地址和端口
+		JedisShardInfo shardInfo = new JedisShardInfo("redis://localhost:6379");
+		//这里是密码
+		shardInfo.setPassword("12345");
 		for(int i=0; i < latch.getCount(); i++){
 			Jedis jedis = new Jedis(shardInfo);
 			UUID uuid = UUID.randomUUID();

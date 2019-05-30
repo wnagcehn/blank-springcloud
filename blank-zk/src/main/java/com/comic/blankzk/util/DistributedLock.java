@@ -15,12 +15,12 @@ import java.util.concurrent.TimeUnit;
  * author：wangchen
  */
 public class DistributedLock {
-    public static Logger log = LoggerFactory.getLogger(DistributedLock.class);
-    private InterProcessMutex interProcessMutex;  //可重入排它锁
-    private String lockName;  //竞争资源标志
-    private String root = "/distributed/lock/";//根节点
+    private static Logger log = LoggerFactory.getLogger(DistributedLock.class);
+    private InterProcessMutex interProcessMutex;  //可重入排它锁（封装好的）
+    private String lockName;  //锁标志
+    private String root = "/distributed/lock/"; //根节点
     private static CuratorFramework curatorFramework;
-    private static String ZK_URL = "zookeeper1.tq.master.cn:2181,zookeeper3.tq.master.cn:2181,zookeeper2.tq.master.cn:2181,zookeeper4.tq.master.cn:2181,zookeeper5.tq.master.cn:2181";
+    private static String ZK_URL = "127.0.0.0：2181"; //存在多台zk，用逗号隔开
     static{
         curatorFramework= CuratorFrameworkFactory.newClient(ZK_URL,new ExponentialBackoffRetry(1000,3));
         curatorFramework.start();
