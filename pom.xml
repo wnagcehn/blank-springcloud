@@ -18,6 +18,8 @@
         <module>blank-gateway</module>
         <module>blank-redis</module>
         <module>blank-zk</module>
+        <module>atomic-cas</module>
+        <module>blank-sort</module>
     </modules>
 
     <!-- 2.1.X+Greenwich+0.9.X -->
