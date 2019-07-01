@@ -70,12 +70,6 @@ public class ZooKeeperLock implements Lock, Watcher {
         return zk;
     }
 
-
-    @Override
-    public void lock() {
-
-    }
-
     @Override
     public boolean tryLock() {
         try {
@@ -110,14 +104,48 @@ public class ZooKeeperLock implements Lock, Watcher {
         return false;
     }
 
+    private boolean waitForLock(String lower, long waitTime, TimeUnit unit) throws InterruptedException, KeeperException {
+        Stat stat = zk.exists(root + "/" + lower, true);
+        //判断比自己小一个数的节点是否存在(存在就是还没释放锁),如果不存在则无需等待锁,同时注册监听
+        if (null != stat){
+            this.latch = new CountDownLatch(1);
+            this.latch.await(waitTime, unit);
+            this.latch = null;
+        }
+        return true;
+    }
+
+    @Override
+    public void lock() {
+        try {
+            if (!tryLock()){
+                boolean locked = waitForLock(waitNode, SESSION_TIMEOUT, TimeUnit.MILLISECONDS);
+                if(!locked){
+                    logger.error("can not lock...");
+                }
+            }
+        } catch (Exception e) {
+            throw new LockException(e);
+        }
+    }
+
     @Override
     public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-        return false;
+        try{
+            return tryLock() || waitForLock(waitNode, time, unit);
+        }catch (Exception e){
+            throw new LockException(e);
+        }
     }
 
     @Override
     public void unlock() {
-
+        try{
+            zk.delete(myZnode,-1);
+            myZnode = null;
+        }catch (Exception e){
+            throw new LockException(e);
+        }
     }
 
     @Override
