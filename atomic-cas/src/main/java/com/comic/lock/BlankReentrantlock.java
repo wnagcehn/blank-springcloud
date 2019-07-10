@@ -1,4 +1,4 @@
-package com.comic;
+package com.comic.lock;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;

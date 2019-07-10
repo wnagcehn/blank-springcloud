@@ -1,7 +1,6 @@
-package com.comic;
+package com.comic.lock;
 
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author wangchen870

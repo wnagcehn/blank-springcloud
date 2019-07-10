@@ -1,4 +1,4 @@
-package com.comic;
+package com.comic.lock;
 
 /**
  * @author wangchen870
