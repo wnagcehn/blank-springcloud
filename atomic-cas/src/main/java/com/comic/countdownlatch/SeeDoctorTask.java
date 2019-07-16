@@ -30,7 +30,7 @@ public class SeeDoctorTask implements Runnable {
                 countDownLatch.countDown();
             }
         }
-        System.out.println(1);
+        System.out.println("再去给自己买根冰棍");
     }
 }
  

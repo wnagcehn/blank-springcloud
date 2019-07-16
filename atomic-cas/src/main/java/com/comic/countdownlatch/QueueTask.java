@@ -29,7 +29,7 @@ public class QueueTask implements Runnable{
                 countDownLatch.countDown();
             }
         }
-        System.out.println(2);
+        System.out.println("顺便上个厕所");
     }
 }
  
