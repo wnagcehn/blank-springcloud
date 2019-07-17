@@ -20,6 +20,7 @@
         <module>blank-zk</module>
         <module>atomic-cas</module>
         <module>blank-sort</module>
+        <module>blank-proxy</module>
     </modules>
 
     <!-- 2.1.X+Greenwich+0.9.X -->
