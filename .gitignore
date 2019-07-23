@@ -12,3 +12,4 @@
 *.rules
 configure.properties
 /classes/
+*.class
