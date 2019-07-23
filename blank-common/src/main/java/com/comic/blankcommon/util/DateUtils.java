@@ -3,6 +3,7 @@ package com.comic.blankcommon.util;
 import com.google.common.collect.Maps;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -74,6 +75,55 @@ public class DateUtils {
         String dateStr = sdf.format(cl.getTime());
         Timestamp ts1 = Timestamp.valueOf(dateStr);
         return ts1;
+    }
+
+    /**
+     * 获取指定日期的最后一天
+     *
+     * 如：2019-01-01
+     * 返回结果：2019-01-31
+     *
+     * @author wangchen
+     * @date 2019年6月15日 下午12:10:02
+     *
+     * @param date
+     * @return
+     * @throws ParseException
+     */
+    public static String getLastDay(String date) throws ParseException {
+        // 今天的时间
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        cal.setTime(sdf.parse(date));
+        // 获取本月的最大天数
+        int days = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        // 设置创造新日期，这个日期是本月的最后一天
+        cal.set(Calendar.DATE, days);
+        Date newD = cal.getTime();
+        return new SimpleDateFormat("yyyy-MM-dd").format(newD);
+    }
+
+    /**
+     * 获取指定日期的 上月第一天，下月第一天等
+     * @param dateStr  时间字符串 2018-11-02
+     * @param Month -1-获取上月第一天,0-获取当月第一天 1-获取下月第一天
+     * @param format
+     * @return
+     */
+    public static String getFirstDayOfGivenMonth(String dateStr,int Month,String format){
+        SimpleDateFormat sdf=new SimpleDateFormat(format);
+        try {
+            Date date = sdf.parse(dateStr);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.set(Calendar.DAY_OF_MONTH,1);
+            calendar.add(Calendar.MONTH, Month);
+            return sdf.format(calendar.getTime());
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
