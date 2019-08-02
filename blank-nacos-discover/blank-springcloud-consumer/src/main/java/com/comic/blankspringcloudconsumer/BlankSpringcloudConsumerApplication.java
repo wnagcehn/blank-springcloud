@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 public class BlankSpringcloudConsumerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BlankSpringcloudConsumerApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(BlankSpringcloudConsumerApplication.class, args);
     }
 
     //注册一个RestTemplate实例用以发送请求，给RestTemplate实例添加@LoadBalanced注解，开启与Ribbon的集成用于负载均衡

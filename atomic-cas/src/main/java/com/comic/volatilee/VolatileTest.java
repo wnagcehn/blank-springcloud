@@ -11,8 +11,9 @@ public class VolatileTest {
     public static void main(String[] args){
         new Thread1().start();
         while (n<100){
-
+//            System.out.println(n);
         }
+        System.out.println(n);
         System.out.println("stop");
     }
 
