@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    public String echo(String username) {
+    @RequestMapping(value = "/getUser/{username}", method = RequestMethod.GET)
+    public String echo(@PathVariable("username") String username) {
         return "Hello Nacos Provider:" + username;
     }
 }
