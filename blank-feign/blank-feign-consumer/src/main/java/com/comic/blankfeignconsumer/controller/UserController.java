@@ -6,7 +6,10 @@ import com.comic.blankfeignconsumer.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author wangchen870
@@ -16,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Autowired
+    @Resource
     private IUserService userService;
 
     @SentinelResource(value = "resource", blockHandler = "handleException", blockHandlerClass = {ExceptionUtil.class})
-    @GetMapping("/getUser/{user}")
+    @GetMapping("/member/{user}")
     public String getUser(@PathVariable("user") String user){
         return userService.getUsername(user);
     }

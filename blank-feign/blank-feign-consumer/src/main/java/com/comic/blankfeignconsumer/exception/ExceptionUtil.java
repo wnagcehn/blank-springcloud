@@ -12,10 +12,10 @@ import java.util.Map;
  */
 public class ExceptionUtil {
 
-    public static Map<String,Object> handleException(BlockException ex) {
+    public static Map<String,Object> handleException(BlockException e) {
         Map<String,Object> map=new HashMap<>();
-        System.out.println("Oops: " + ex.getClass().getCanonicalName());
-        map.put("Oops",ex.getClass().getCanonicalName());
+        System.out.println("Oops: " + e.getClass().getCanonicalName());
+        map.put("Oops",e.getClass().getCanonicalName());
         map.put("msg","通过@SentinelResource注解配置限流埋点并自定义处理限流后的逻辑");
         return  map;
     }
