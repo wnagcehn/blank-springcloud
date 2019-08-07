@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>blank-feign</artifactId>
-
-    <!-- pom:父类型都为pom类型 -->
-    <!-- jar:内部调用或者是作服务使用 -->
-    <!-- war:需要部署的项目 -->
-    <packaging>pom</packaging>
+    <artifactId>blank-dubbo</artifactId>
 
     <properties>
         <java.version>1.8</java.version>
@@ -26,8 +21,8 @@
     </properties>
 
     <modules>
-        <module>blank-feign-provider</module>
-        <module>blank-feign-consumer</module>
+        <module>dubbo-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
 
 </project>

@@ -21,6 +21,7 @@
         <module>atomic-cas</module>
         <module>blank-proxy</module>
         <module>blank-admin</module>
+        <module>blank-dubbo</module>
     </modules>
 
     <!-- 2.1.X+Greenwich+0.9.X -->
