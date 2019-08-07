@@ -6,8 +6,16 @@ server:
 spring:
   application:
     name: feign-provider
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8060  # admin的地址,不加http会注册失败
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: be8aca6a-8ab2-4845-88cf-772a06f7f540
+
+# 给spring-admin中显示的服务添加版本号，从pom中取
+info:
+  version: @project.version@
