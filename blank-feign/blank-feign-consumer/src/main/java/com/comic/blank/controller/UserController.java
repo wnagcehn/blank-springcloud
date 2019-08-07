@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author wangchen
@@ -20,10 +22,13 @@ public class UserController {
     @Resource
     private IUserService userService;
 
-//    @SentinelResource(value = "resource", blockHandler = "handleException", blockHandlerClass = {ExceptionUtil.class})
+    @SentinelResource(value = "resource", blockHandler = "handleException", blockHandlerClass = {ExceptionUtil.class})
     @GetMapping("/member/{user}")
-    public String getUser(@PathVariable("user") String user){
-        return userService.getUsername(user);
+    public Map<String, Object> getUser(@PathVariable("user") String user){
+        String result = userService.getUsername(user);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("result", result);
+        return map;
     }
 
 }

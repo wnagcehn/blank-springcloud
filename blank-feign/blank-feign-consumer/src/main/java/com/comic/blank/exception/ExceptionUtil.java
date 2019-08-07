@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class ExceptionUtil {
 
-    public static Map<String,Object> handleException(BlockException e) {
+    public static Map<String, Object> handleException(String user, BlockException e) {
         Map<String,Object> map=new HashMap<>();
         System.out.println("Oops: " + e.getClass().getCanonicalName());
         map.put("Oops",e.getClass().getCanonicalName());
