@@ -4,3 +4,35 @@ server:
 spring:
   application:
     name: dubbo-provider
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8060  # admin的地址,不加http会注册失败
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: be8aca6a-8ab2-4845-88cf-772a06f7f540
+  # bean会覆盖之前相同名称的bean
+  main:
+    allow-bean-definition-overriding: true
+
+# 应用名
+dubbo:
+  application:
+    id: service-provider
+    name: service-provider
+  # 扫描dubbo服务(@Service.. @Reference..)
+  scan:
+    base-packages: com.comic.blank.service
+  # 通信协议
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20880
+  # 注册中心
+  registry:
+    id: dubboRegistry
+    timeout: 5000
+    address: 127.0.0.1:8848
+    protocol: nacos
