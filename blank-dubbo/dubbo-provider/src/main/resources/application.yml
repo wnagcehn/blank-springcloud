@@ -12,8 +12,8 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: be8aca6a-8ab2-4845-88cf-772a06f7f540
-  # bean会覆盖之前相同名称的bean
+        namespace: "@dev_namespace@"
+  # bean会覆盖之前相同名称的bean, Spring Boot 2.1 需要设定
   main:
     allow-bean-definition-overriding: true
 
@@ -29,10 +29,14 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 20880
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
   # 注册中心
   registry:
     id: dubboRegistry
     timeout: 5000
-    address: 127.0.0.1:8848
-    protocol: nacos
+    address: nacos://127.0.0.1:8848
+
+# 给spring-admin中显示的服务添加版本号，从pom中取
+info:
+  version: @project.version@

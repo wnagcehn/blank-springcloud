@@ -5,8 +5,6 @@ import com.comic.blank.service.IDemoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
 /**
  * @author wangchen
  * createAt 2019/8/8
@@ -15,7 +13,6 @@ import javax.annotation.Resource;
 @RestController
 public class DemoController {
 
-    @Resource
     @Reference(version = "1.0.0", check = true)
     private IDemoService demoService;
 

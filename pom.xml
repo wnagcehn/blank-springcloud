@@ -76,6 +76,15 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <id>namespace配置</id>
+            <properties>
+                    <dev_namespace>be8aca6a-8ab2-4845-88cf-772a06f7f540</dev_namespace>
+            </properties>
+        </profile>
+    </profiles>
+
     <!-- 在POM中配置远程仓库
     前面我们看到超级POM配置了ID为central的远程仓库，
     我们可以在POM中配置其它的远程仓库。这样做的原因有很多，
