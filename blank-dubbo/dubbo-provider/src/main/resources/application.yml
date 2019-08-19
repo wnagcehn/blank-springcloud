@@ -13,6 +13,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: "@dev_namespace@"
+        register-enabled: false # 服务不注册，只用来发现，用dubbo注册
   # bean会覆盖之前相同名称的bean, Spring Boot 2.1 需要设定
   main:
     allow-bean-definition-overriding: true
@@ -35,7 +36,7 @@ dubbo:
   registry:
     id: dubboRegistry
     timeout: 5000
-    address: nacos://127.0.0.1:8848
+    address: nacos://127.0.0.1:8848?namespace=@dev_namespace@
 
 # 给spring-admin中显示的服务添加版本号，从pom中取
 info:

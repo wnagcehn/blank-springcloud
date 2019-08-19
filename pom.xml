@@ -80,7 +80,7 @@
         <profile>
             <id>namespace配置</id>
             <properties>
-                    <dev_namespace>be8aca6a-8ab2-4845-88cf-772a06f7f540</dev_namespace>
+                    <dev_namespace>47c5f890-2de6-4ec5-b431-75c65de2233e</dev_namespace>
             </properties>
         </profile>
     </profiles>
