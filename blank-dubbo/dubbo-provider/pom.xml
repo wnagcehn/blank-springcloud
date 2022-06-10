@@ -19,7 +19,7 @@
         <!-- 编译时的jdk版本 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <dubbo.version>2.6.7</dubbo.version>
+        <dubbo.version>2.6.12</dubbo.version>
         <spring-admin.version>2.1.6</spring-admin.version>
     </properties>
 
